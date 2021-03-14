@@ -1,0 +1,136 @@
+
+2019-06-17 22:22:45,262 INFO      * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-06-17 22:22:45,264 INFO      * Restarting with stat
+2019-06-17 22:22:45,416 WARNING   * Debugger is active!
+2019-06-17 22:22:45,418 INFO      * Debugger PIN: 120-164-085
+2019-06-17 22:25:42,533 INFO      * Detected change in '/home/manush/baracuda/MDS/MDS.py', reloading
+2019-06-17 22:25:42,550 INFO      * Restarting with stat
+2019-06-17 22:25:42,728 WARNING   * Debugger is active!
+2019-06-17 22:25:42,730 INFO      * Debugger PIN: 120-164-085
+2019-06-17 22:25:44,610 INFO      * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-06-17 22:25:44,612 INFO      * Restarting with stat
+2019-06-17 22:25:44,763 WARNING   * Debugger is active!
+2019-06-17 22:25:44,766 INFO      * Debugger PIN: 120-164-085
+2019-06-17 22:25:47,700 INFO     Creating package with package id Dg08CfW1
+2019-06-17 22:25:47,700 INFO     connecting to DB
+2019-06-17 22:25:47,701 INFO     executed insert query 
+INSERT INTO packages ('id', 'destination_address', 'destination_city') 
+VALUES (?, ?, ?);
+ with params as ('Dg08CfW1', u'#604, C block, Raheja park, magadi road', u'Bangalore')
+2019-06-17 22:25:47,886 INFO     127.0.0.1 - - [17/Jun/2019 22:25:47] "POST /create HTTP/1.1" 200 -
+2019-06-17 22:25:58,341 INFO     Creating package with package id IYVcgC2R
+2019-06-17 22:25:58,341 INFO     connecting to DB
+2019-06-17 22:25:58,342 INFO     executed insert query 
+INSERT INTO packages ('id', 'destination_address', 'destination_city') 
+VALUES (?, ?, ?);
+ with params as ('IYVcgC2R', u'#604, C block, Raheja park, magadi road', u'Bangalore')
+2019-06-17 22:25:58,513 INFO     127.0.0.1 - - [17/Jun/2019 22:25:58] "POST /create HTTP/1.1" 200 -
+2019-06-17 22:27:13,947 INFO     Creating transit point with id Q08KnR27
+2019-06-17 22:27:13,947 INFO     connecting to DB
+2019-06-17 22:27:13,947 INFO     executed insert query 
+INSERT INTO transits ('transit_id','package_id','transit_address') 
+values (?,?,?);
+ with params as ('Q08KnR27', u'Dg08CfW1', u'mumbai')
+2019-06-17 22:27:14,123 INFO     127.0.0.1 - - [17/Jun/2019 22:27:14] "PUT /update HTTP/1.1" 200 -
+2019-06-17 22:27:24,422 INFO     Creating transit point with id h4vjZ2wg
+2019-06-17 22:27:24,422 INFO     connecting to DB
+2019-06-17 22:27:24,423 INFO     executed insert query 
+INSERT INTO transits ('transit_id','package_id','transit_address') 
+values (?,?,?);
+ with params as ('h4vjZ2wg', u'Dg08CfW1', u'pune')
+2019-06-17 22:27:24,604 INFO     127.0.0.1 - - [17/Jun/2019 22:27:24] "PUT /update HTTP/1.1" 200 -
+2019-06-17 22:27:39,986 INFO     Creating transit point with id lAwG8gF6
+2019-06-17 22:27:39,986 INFO     connecting to DB
+2019-06-17 22:27:39,987 INFO     executed insert query 
+INSERT INTO transits ('transit_id','package_id','transit_address') 
+values (?,?,?);
+ with params as ('lAwG8gF6', u'Dg08CfW1', u'Hubli')
+2019-06-17 22:27:40,165 INFO     127.0.0.1 - - [17/Jun/2019 22:27:40] "PUT /update HTTP/1.1" 200 -
+2019-06-17 22:27:51,664 INFO     checking the progress for package Dg08CfW1
+2019-06-17 22:27:51,665 INFO     connecting to DB
+2019-06-17 22:27:51,665 INFO     executed insert query 
+SELECT timestamp, transit_address FROM transits where package_id=? order by timestamp asc;
+ with params as (u'Dg08CfW1',)
+2019-06-17 22:27:51,666 INFO     127.0.0.1 - - [17/Jun/2019 22:27:51] "GET /check_progress?package_id=Dg08CfW1 HTTP/1.1" 200 -
+2019-06-17 22:28:20,191 INFO      * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-06-17 22:28:20,194 INFO      * Restarting with stat
+2019-06-17 22:28:20,351 WARNING   * Debugger is active!
+2019-06-17 22:28:20,353 INFO      * Debugger PIN: 120-164-085
+2019-06-17 22:28:24,464 INFO     checking the progress for package Dg08CfW1
+2019-06-17 22:28:24,464 INFO     connecting to DB
+2019-06-17 22:28:24,465 INFO     executed insert query 
+SELECT timestamp, transit_address FROM transits where package_id=? order by timestamp asc;
+ with params as (u'Dg08CfW1',)
+2019-06-17 22:28:24,473 INFO     127.0.0.1 - - [17/Jun/2019 22:28:24] "GET /check_progress?package_id=Dg08CfW1 HTTP/1.1" 200 -
+2019-06-17 22:29:11,562 INFO     checking the progress for package IYVcgC2R
+2019-06-17 22:29:11,562 INFO     connecting to DB
+2019-06-17 22:29:11,563 INFO     executed insert query 
+SELECT timestamp, transit_address FROM transits where package_id=? order by timestamp asc;
+ with params as (u'IYVcgC2R',)
+2019-06-17 22:29:11,563 INFO     127.0.0.1 - - [17/Jun/2019 22:29:11] "GET /check_progress?package_id=IYVcgC2R HTTP/1.1" 200 -
+2019-06-17 23:58:19,238 INFO      * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-06-17 23:58:19,277 INFO      * Restarting with stat
+2019-06-17 23:58:19,431 WARNING   * Debugger is active!
+2019-06-17 23:58:19,459 INFO      * Debugger PIN: 120-164-085
+2019-06-18 00:18:59,438 INFO      * Detected change in '/home/manush/baracuda/MDS/MDS.py', reloading
+2019-06-18 00:18:59,459 INFO      * Restarting with stat
+2019-06-18 00:21:20,507 INFO      * Restarting with stat
+2019-06-18 01:04:33,374 WARNING   * Debugger is active!
+2019-06-18 01:04:33,377 INFO      * Debugger PIN: 120-164-085
+2019-06-18 01:04:36,174 INFO      * Running on https://127.0.0.1:5000/ (Press CTRL+C to quit)
+2019-06-18 01:04:36,176 INFO      * Restarting with stat
+2019-06-18 01:04:36,333 WARNING   * Debugger is active!
+2019-06-18 01:04:36,336 INFO      * Debugger PIN: 120-164-085
+2019-06-18 01:06:15,536 INFO     Creating package with package id 3jUZYHhi
+2019-06-18 01:06:15,536 INFO     connecting to DB
+2019-06-18 01:06:15,537 INFO     executed insert query 
+INSERT INTO packages ('id', 'destination_address', 'destination_city') 
+VALUES (?, ?, ?);
+ with params as ('3jUZYHhi', u'#604, C block, Raheja park, magadi road', u'Bangalore')
+2019-06-18 01:06:15,690 INFO     127.0.0.1 - - [18/Jun/2019 01:06:15] "POST /create HTTP/1.1" 200 -
+2019-06-18 01:06:34,796 INFO     Creating transit point with id FyQiXnKE
+2019-06-18 01:06:34,796 INFO     connecting to DB
+2019-06-18 01:06:34,797 INFO     executed insert query 
+INSERT INTO transits ('transit_id','package_id','transit_address') 
+values (?,?,?);
+ with params as ('FyQiXnKE', u'PG29IvR4', u'mumbai')
+2019-06-18 01:06:34,974 INFO     127.0.0.1 - - [18/Jun/2019 01:06:34] "PUT /update HTTP/1.1" 200 -
+2019-06-18 01:06:40,186 INFO     Creating transit point with id rkw2CVMc
+2019-06-18 01:06:40,186 INFO     connecting to DB
+2019-06-18 01:06:40,187 INFO     executed insert query 
+INSERT INTO transits ('transit_id','package_id','transit_address') 
+values (?,?,?);
+ with params as ('rkw2CVMc', u'PG29IvR4', u'punr')
+2019-06-18 01:06:40,354 INFO     127.0.0.1 - - [18/Jun/2019 01:06:40] "PUT /update HTTP/1.1" 200 -
+2019-06-18 01:06:49,678 INFO     Creating transit point with id hZ2T4msG
+2019-06-18 01:06:49,678 INFO     connecting to DB
+2019-06-18 01:06:49,678 INFO     executed insert query 
+INSERT INTO transits ('transit_id','package_id','transit_address') 
+values (?,?,?);
+ with params as ('hZ2T4msG', u'PG29IvR4', u'hubli')
+2019-06-18 01:06:49,849 INFO     127.0.0.1 - - [18/Jun/2019 01:06:49] "PUT /update HTTP/1.1" 200 -
+2019-06-18 01:06:55,398 INFO     Creating transit point with id zQmCwy1H
+2019-06-18 01:06:55,399 INFO     connecting to DB
+2019-06-18 01:06:55,400 INFO     executed insert query 
+INSERT INTO transits ('transit_id','package_id','transit_address') 
+values (?,?,?);
+ with params as ('zQmCwy1H', u'PG29IvR4', u'bangalore')
+2019-06-18 01:06:55,562 INFO     127.0.0.1 - - [18/Jun/2019 01:06:55] "PUT /update HTTP/1.1" 200 -
+2019-06-18 01:07:38,720 INFO     checking the progress for package PG29IvR4
+2019-06-18 01:07:38,720 INFO     connecting to DB
+2019-06-18 01:07:38,721 INFO     executed insert query 
+SELECT timestamp, transit_address FROM transits where package_id=? order by timestamp asc;
+ with params as (u'PG29IvR4',)
+2019-06-18 01:07:38,722 INFO     127.0.0.1 - - [18/Jun/2019 01:07:38] "GET /check_progress?package_id=PG29IvR4 HTTP/1.1" 200 -
+2019-06-18 01:08:59,148 INFO     marking delivered for package PG29IvR4
+2019-06-18 01:08:59,148 INFO     connecting to DB
+2019-06-18 01:08:59,148 INFO     executed insert query 
+UPDATE packages SET delivered = 1 where id=?;
+ with params as (u'PG29IvR4',)
+2019-06-18 01:08:59,149 INFO     127.0.0.1 - - [18/Jun/2019 01:08:59] "PUT /mark_delivered HTTP/1.1" 200 -
+2019-06-18 01:10:09,127 INFO     marking delivered for package 3jUZYHhi
+2019-06-18 01:10:09,127 INFO     connecting to DB
+2019-06-18 01:10:09,128 INFO     executed insert query 
+UPDATE packages SET delivered = 1 where id=?;
+ with params as (u'3jUZYHhi',)
+2019-06-18 01:10:09,304 INFO     127.0.0.1 - - [18/Jun/2019 01:10:09] "PUT /mark_delivered HTTP/1.1" 200 -

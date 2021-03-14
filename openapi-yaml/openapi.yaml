@@ -1,0 +1,156 @@
+openapi: 3.0.1
+info:
+  title: defaultTitle
+  description: defaultDescription
+  version: "0.1"
+servers:
+- url: https://0.0.0.0:5000
+paths:
+  /create:
+    post:
+      description: To create a package
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body'
+            examples:
+              0:
+                value: |-
+                  {
+                      "destination_address":"#604, C block, Raheja park, magadi road",
+                      "destination_city":"Bangalore"
+                  }
+      responses:
+        200:
+          description: returns package unique id
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                0:
+                  value: |
+                    "PG29IvR4"
+      servers:
+      - url: https://0.0.0.0:5000
+    servers:
+    - url: https://0.0.0.0:5000
+  /check_progress:
+    get:
+      description: To check progress of a package
+      parameters:
+      - name: package_id
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: PG29IvR4
+      responses:
+        200:
+          description: returns json key value with key as datetime of arrival of the
+            package at a transit city
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+              examples:
+                0:
+                  value: |
+                    {
+                      "2019-06-17 15:03:50": "mumbai"
+                    }
+      servers:
+      - url: https://0.0.0.0:5000
+    servers:
+    - url: https://0.0.0.0:5000
+  /update:
+    put:
+      description: To add a transit point for the package
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_1'
+            examples:
+              0:
+                value: |-
+                  {
+                      "package_id":"PG29IvR4",
+                      "transit_city":"mumbai"
+                  }
+      responses:
+        200:
+          description: returns unique id
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                0:
+                  value: |
+                    "OkcHZaMU"
+      servers:
+      - url: https://0.0.0.0:5000
+    servers:
+    - url: https://0.0.0.0:5000
+  /mark_delivered:
+    put:
+      description: to mark a package as delivered
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_2'
+            examples:
+              0:
+                value: |-
+                  {
+                      "package_id":"PG29IvR4"
+                  }
+      responses:
+        200:
+          description: an ACK message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+              examples:
+                0:
+                  value: |
+                    "Thanks!!"
+      servers:
+      - url: https://0.0.0.0:5000
+    servers:
+    - url: https://0.0.0.0:5000
+components:
+  schemas:
+    body:
+      type: object
+      properties:
+        destination_address:
+          type: string
+        destination_city:
+          type: string
+    inline_response_200:
+      type: object
+      properties:
+        2019-06-17 15:03:50:
+          type: string
+    body_1:
+      type: object
+      properties:
+        transit_city:
+          type: string
+        package_id:
+          type: string
+    body_2:
+      type: object
+      properties:
+        package_id:
+          type: string
